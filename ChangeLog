@@ -1,0 +1,77 @@
+randtype 1.13
+  * Makefile portability fix
+  * fix free() in parse_replace() (linux)
+
+randtype 1.12
+  * added option -r to replace a string with another (see manpage). thanks to
+    Dan Stubbs for the strrep() function
+  * fixed time value bugs (i hope)
+
+randtype 1.11
+  * the argument format for the -d option has changed. it must begin with
+    either a , or . to specify the direction of characters to dump left or
+    right of the dump string respectively (see manual page)
+
+randtype 1.10
+  * added generated mistakes command line option -m
+
+randtype 1.9
+  * new author address (bjk@arbornet.org)
+  * small code and Makefile cleanups
+  * should build on just about anything
+  * removed long option arguments (for portability)
+  * removed debian stuff as I don't have a way to maintain the control files
+    right now
+  * added LICENSE and BUGS to the archive; renamed NEWS to ChangeLog
+  * support for gzip compressed files
+
+randtype 1.8
+  * small cleanups
+  * debianized
+
+randtype 1.7
+  * uses select() instead of usleep() for efficientcy (about 20 times faster)
+  * added command line option --quit to quit after a certain amount of
+    seconds which adds a signal handler (sigaction())
+  * removed MSDOS/WIN32 port (who cares? say so if you do.)
+
+randtype 1.6
+  * MSDOS/WIN32 uses GNU getopt now (forgot about the damn licensing issues)
+  * default timing values for MSDOS/WIN32 a bit saner as they don't work the
+    same as in Linux for some reason
+
+randtype 1.5
+  * updated to work with MSDOS/WIN32. Note that random number generation sucks
+    in this environment, and doesn't work near as well as it does in say,
+    Linux. :)
+  * the --wait option does not require --char-time anymore as it defaults to
+    the same as --time (specified at compile time)
+  * added a manual page
+
+randtype 1.4
+  * added command line option --lines (-l) for outputting lines at random
+    intervals. only the --time option is used with this
+
+randtype 1.3
+  * --magic long option replaced with --dump-string
+  * --nowait long option renamed to --no-wait
+  * added short --kill command line option -k
+  * added --wait (-w) command line option (see README)
+  * added --char-time command line option for use with --wait
+  * small cleanups
+
+randtype 1.2
+  * multiple files may be specified. if none are specifed, stdin is assumed.
+  * defaults for --time are specified at compile time
+  * magic strings in lines read from stdin work now
+
+randtype 1.1
+  * new command line option `--magic' replaces old builtin magic string.
+  * new command line option `kill' to specifically kill the magic string on
+    output. the default is to display it.
+  * new command line option `--nowait' to dump specific characters
+    immediately. special characters can be escaped (ie: '\n\t' etc...)
+  * some small code cleanups :)
+
+randtype 1.0
+  * initial release

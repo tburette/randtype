@@ -1,0 +1,11 @@
+Randtype is a small utility to output characters or lines at random intervals.
+There are a few command line options to refine the output. Type `randtype -h'
+or read the manual page after installation to see an explanation of them.
+
+Installation:
+-------------
+Edit the Makefile to change some defaults or just type `make' to compile the
+program, and `make install' to install it. 
+
+--
+bjk <bjk@arbornet.org>
