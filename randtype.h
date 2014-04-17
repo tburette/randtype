@@ -47,7 +47,7 @@ float tms, cms;
 int err;
 unsigned int tmult, cmult;
 unsigned int dolines, mistakes, dir;
-char nowait[137], wait[137];
+char _nowait[137], _wait[137];
 char dumpstr[64];
 
 /* Function prototypes. */

@@ -228,14 +228,14 @@ static int randtype(char *str)
 	}
 
 	n++;
-	c = chk_special(nowait, i);
+	c = chk_special(_nowait, i);
 
 	if (i == c) {
 	    fprintf(stdout, "%c", i);
 	    continue;
 	}
 
-	c = chk_special(wait, i);
+	c = chk_special(_wait, i);
 
 	if (i == c) {
 	    randsleep(cms, cmult);
@@ -530,7 +530,7 @@ int main(int argc, char *argv[])
     /* Set defaults. */
     tms = cms = DEF_MS;
     tmult = cmult = DEF_MULT;
-    nowait[0] = wait[0] = '\0';
+    _nowait[0] = _wait[0] = '\0';
 
     while ((opt = getopt(argc, argv, "m:vhr:q:t:n:w:d:c:kl")) != EOF) {
 	tmp[0] = 0;
@@ -549,10 +549,10 @@ int main(int argc, char *argv[])
 	    mistakes = atoi(tmp);
 	    break;
 	  case 'n':
-	    snprintf(nowait, sizeof(nowait), "%s", optarg);
+	    snprintf(_nowait, sizeof(_nowait), "%s", optarg);
 	    break;
 	  case 'w':
-	    snprintf(wait, sizeof(wait), "%s", optarg);
+	    snprintf(_wait, sizeof(_wait), "%s", optarg);
 	    break;
 	  case 't':
 	    time = optarg;
@@ -610,7 +610,7 @@ int main(int argc, char *argv[])
 	    usage(progname);
 
     if (!dolines) {
-	if (chartime != NULL && wait[0] != '\0') {
+	if (chartime != NULL && _wait[0] != '\0') {
 	    if (time_split(chartime, &cms, &cmult) != 0)
 		usage(progname);
 	}
