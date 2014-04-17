@@ -291,7 +291,8 @@ static char *strrep(char *str, char *find, char *repl)
     char *p0, *p1, *p2;
     size_t find_len = strlen(find);
     size_t repl_len = strlen(repl);
-    size_t dist = 0, diff = repl_len - find_len;
+    size_t dist = 0;
+    long diff = repl_len - find_len;
 
     if (!find_len || (p0 = strstr(str ,find)) == NULL)
 	return str;
